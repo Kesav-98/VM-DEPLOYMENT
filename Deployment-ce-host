@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# ESXi credentials
 ESXI_HOST="10.196.5.203"
 ESXI_USER="root"
 ESXI_PASS="12txbu!@"
