@@ -6,10 +6,8 @@ ESXI_PASS="12txbu!@"
 DATASTORE="datastore1 (16)"
 NETWORK_NAME="VM Network"
 
-# Path to OVA file
 OVA_PATH="/home/test/ce-host*ova"
 
-# IP suffix range
 START=1
 END=1
 
