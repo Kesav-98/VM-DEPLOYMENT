@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# ESXi credentials
+ESXI_HOST="10.105.189.21"
+ESXI_USER="root"
+ESXI_PASS="12txbu!@“
+DATASTORE="datastore1"
+NETWORK_NAME="VM Network"
+
+# Path to OVA file
+OVA_PATH="/home/test/ce-host*ova"
+
+# IP suffix range
+START=101
+END=200
+
+for i in $(seq $START $END); do
+  VM_NAME="CE-Host-189.$i"
+  echo "Deploying VM: $VM_NAME"
+
+  /home/test/ovftool/ovftool \
+    --acceptAllEulas \
+    --name="$VM_NAME" \
+    --datastore="$DATASTORE" \
+    --network="$NETWORK_NAME" \
+    --diskMode=thin \
+    --powerOn \
+    "$OVA_PATH" \
+    "vi://$ESXI_USER:$ESXI_PASS@$ESXI_HOST/"
+
+  if [ $? -eq 0 ]; then
+    echo "✅ $VM_NAME deployed and powered on."
+  else
+    echo "❌ Failed to deploy $VM_NAME"
+  fi
+
+  echo "-------------------------------"
+done
