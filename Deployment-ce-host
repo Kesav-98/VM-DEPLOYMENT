@@ -39,3 +39,14 @@ for i in $(seq $START $END); do
 
   echo "-------------------------------"
 done
+
+pipeline {
+    agent any
+    stages {
+        stage('Deploy') {
+            steps {
+                sh 'bash deploy.sh'
+            }
+        }
+    }
+}
