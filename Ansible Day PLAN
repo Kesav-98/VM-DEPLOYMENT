@@ -20,6 +20,7 @@ Install Ansible on Ubuntu
 Configure 2 remote servers (Linux VMs) with SSH
 
 Run a simple ad-hoc command: ansible all -m ping
+-----------------------------------------------------------------------------------------
 
 Day 2 – Ad-hoc Commands & Inventory
 
@@ -40,7 +41,7 @@ Create inventory with groups [webservers] and [dbservers]
 Install Apache/NGINX on webservers using ad-hoc command
 
 Check service status using ansible -m service
-
+--------------------------------------------------------------------------------------------------
 Day 3 – Playbooks
 
 Playbook YAML structure: hosts, tasks, vars
@@ -62,7 +63,7 @@ Install Apache
 Deploy an index.html file
 
 Ensure service is running
-
+------------------------------------------------------------------------------------------------------
 Day 4 – Variables & Templates
 
 Defining variables in playbooks, inventory, command line
@@ -82,7 +83,7 @@ Create a Jinja2 template for nginx.conf with variables
 Deploy it with a playbook
 
 Restart service if template changes
-
+-----------------------------------------------------------------------------------------------------------
 Day 5 – Roles & Galaxy
 
 Why Roles? Structure & reusability
@@ -106,7 +107,7 @@ Deploy template
 Restart service
 
 Download a role from Galaxy (like geerlingguy.nginx) and use it
-
+---------------------------------------------------------------------------------------------------------------
 Day 6 – Advanced Features
 
 Conditionals (when)
@@ -126,7 +127,7 @@ Write a playbook with conditions (install MySQL only if Ubuntu)
 Use ansible-vault to store DB password
 
 Deploy a database config file with encrypted password
-
+----------------------------------------------------------------------------------------------------------------------
 Day 7 – Real-World Project
 
 Bringing it all together
