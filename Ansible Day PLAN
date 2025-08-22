@@ -1,0 +1,152 @@
+🗓️ Ansible Day-wise Learning Plan
+DAY1 – Basics of Ansible
+
+What is Ansible? Why use it in DevOps?
+
+Push vs Pull automation (Ansible vs Puppet/Chef)
+
+Ansible architecture: Control Node & Managed Nodes
+
+Installation of Ansible on Ubuntu
+
+Inventory file basics (/etc/ansible/hosts)
+
+Running first command with ansible -m ping all
+
+🔹 Hands-on:
+
+Install Ansible on Ubuntu
+
+Configure 2 remote servers (Linux VMs) with SSH
+
+Run a simple ad-hoc command: ansible all -m ping
+
+Day 2 – Ad-hoc Commands & Inventory
+
+Static vs Dynamic inventory
+
+INI and YAML inventory formats
+
+Groups and host variables
+
+Common ad-hoc modules (command, shell, copy, file, yum/apt, service)
+
+Managing users and packages with ad-hoc commands
+
+🔹 Hands-on:
+
+Create inventory with groups [webservers] and [dbservers]
+
+Install Apache/NGINX on webservers using ad-hoc command
+
+Check service status using ansible -m service
+
+Day 3 – Playbooks
+
+Playbook YAML structure: hosts, tasks, vars
+
+Modules in playbooks
+
+Idempotency in Ansible
+
+Variables and facts
+
+Handlers (start/restart service only if change happens)
+
+🔹 Hands-on:
+
+Write a playbook to:
+
+Install Apache
+
+Deploy an index.html file
+
+Ensure service is running
+
+Day 4 – Variables & Templates
+
+Defining variables in playbooks, inventory, command line
+
+Variable precedence order
+
+Using facts (ansible_facts)
+
+Jinja2 templates for dynamic config files
+
+with_items loop for multiple installations
+
+🔹 Hands-on:
+
+Create a Jinja2 template for nginx.conf with variables
+
+Deploy it with a playbook
+
+Restart service if template changes
+
+Day 5 – Roles & Galaxy
+
+Why Roles? Structure & reusability
+
+Role directory structure (defaults/, tasks/, handlers/, templates/)
+
+Importing roles into playbooks
+
+Using ansible-galaxy install to get community roles
+
+Tags in playbooks for selective runs
+
+🔹 Hands-on:
+
+Create a role apache-role to:
+
+Install Apache
+
+Deploy template
+
+Restart service
+
+Download a role from Galaxy (like geerlingguy.nginx) and use it
+
+Day 6 – Advanced Features
+
+Conditionals (when)
+
+Loops (with_items, loop)
+
+Blocks & error handling (block, rescue, always)
+
+Delegation (delegate_to)
+
+Vault for secret management (encrypt passwords)
+
+🔹 Hands-on:
+
+Write a playbook with conditions (install MySQL only if Ubuntu)
+
+Use ansible-vault to store DB password
+
+Deploy a database config file with encrypted password
+
+Day 7 – Real-World Project
+
+Bringing it all together
+
+CI/CD integration with Ansible (Jenkins pipeline)
+
+Best practices (ansible-lint, folder structure)
+
+Scaling with dynamic inventory (AWS, Docker, K8s)
+
+🔹 Hands-on Project:
+
+Provision a 2-tier app:
+
+Webserver group → Apache + app files
+
+DB group → MySQL with secure password (using vault)
+
+Handlers to restart services on config change
+
+Roles for modularity
+
+👉 By the end of Day 7, you’ll have production-ready Ansible playbooks and understand how to use Ansible in your DevOps projects.
